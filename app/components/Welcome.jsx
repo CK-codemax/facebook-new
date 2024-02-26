@@ -12,7 +12,7 @@ export default function Welcome() {
       <div>
         <p>welcome to my facebook clone</p>
         <Link href={'/api/auth/signin/google'}>Click here to view more</Link>
-       
+       <p>we will see </p>
       </div>
     )
 }
