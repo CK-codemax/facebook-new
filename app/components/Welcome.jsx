@@ -16,19 +16,14 @@ export default function Welcome() {
 
    
 
-    const {data : session} = useSession({
-        required : true,
-          onUnauthenticated(){
-         redirect('/api/auth/signin/google')
-          }
-    })
+    const {data : session} = useSession()
     
     if(!mounted)return
     return (
       <div>
         <p>welcome to my facebook clone</p>
       
-    
+       {mounted && !session && <Link href={'/api/auth/signin/google'}>SIGNIN</Link>}
       </div>
     )
 }
