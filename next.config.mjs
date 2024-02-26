@@ -1,4 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [
+          {
+            protocol: 'https',
+            hostname: 'dailypost.ng',
+            port: '',
+          },
+        ]
+        }
+};
 
 export default nextConfig;
