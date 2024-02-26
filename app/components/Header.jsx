@@ -12,13 +12,13 @@ import Image from "next/image";
 import HeaderIcon from "./HeaderIcon";
 import SideBarModal from "./SideBarModal";
 import WidgetsModal from "./WidgetsModal";
-import { useSession } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function Header() {
    
   const { data : session } =  useSession()
-  if(!session)redirect(`/api/auth/signin/google`)
+  if(!session)signIn()
   return (
     <header className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
         {/*left*/}
