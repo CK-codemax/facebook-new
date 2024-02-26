@@ -3,6 +3,7 @@ import "./globals.css";
 import Sidebar from "./components/Sidebar";
 import Widgets from "./components/Widgets";
 import Header from "./components/Header";
+import AuthProvider from "./context/AuthProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,9 @@ export default function RootLayout({ children }) {
         <Sidebar />
         <Widgets />
         </main>
+        <AuthProvider>
         {children}
+        </AuthProvider>
         
         </body>
     </html>
