@@ -21,10 +21,9 @@ export default function RootLayout({ children }) {
         <Sidebar />
         <Widgets />
         </main>
-        <AuthProvider>
+       
         {children}
-        </AuthProvider>
-        
+               
         </body>
     </html>
   );

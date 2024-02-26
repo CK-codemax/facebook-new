@@ -1,13 +1,10 @@
-'use client'
-
-import { useSession } from "next-auth/react"
-import { redirect } from "next/navigation"
+import Welcome from "./components/Welcome";
+import AuthProvider from "./context/AuthProvider";
 
 export default function page() {
-  const {data : session} = useSession()
-
-  if(!session)redirect('/api/auth/signin')
-  return (
-    <div>let us see new facebook</div>
+  return(
+    <AuthProvider>
+      <Welcome />
+    </AuthProvider>
   )
 }
