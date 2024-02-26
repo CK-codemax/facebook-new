@@ -17,16 +17,12 @@ export default async function RootLayout({ children }) {
     <html lang="en">
       <body className={inter.className}>
         {session &&  <p>{session?.user?.name}</p>}
-        {session ? (
+        {/* {session ? (
           <Link href={'api/auth/signout'}>Sign out</Link>
         ) : (
           <Link href={'api/auth/signin'}>Sign In</Link>
-        )}
-        {/* <Header />
-        <main className="flex">
-        <Sidebar />
-        <Widgets />
-        </main> */}
+        )} */}
+      
        
         {children}
                
