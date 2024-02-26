@@ -1,29 +1,29 @@
 'use client'
 
-import { useSession } from "next-auth/react"
 import Link from "next/link"
-import { redirect } from "next/navigation"
-import { useEffect, useState } from "react"
+// import { useSession } from "next-auth/react"
+// import { redirect } from "next/navigation"
+// import { useEffect, useState } from "react"
 
 export default function Welcome() {
-    const [mounted, setMounted] = useState(false)
+    // const [mounted, setMounted] = useState(false)
 
-    useEffect(() => {
-       setMounted(true)
+    // useEffect(() => {
+    //    setMounted(true)
  
-       return () => setMounted(false)
-    }, [])
+    //    return () => setMounted(false)
+    // }, [])
 
    
 
-    const {data : session} = useSession()
+    // const {data : session} = useSession()
     
-    if(!mounted)return
+    // if(!mounted)return
     return (
       <div>
         <p>welcome to my facebook clone</p>
       
-       {mounted && <Link href={'/api/auth/signin/google'}>SIGNIN</Link>}
+       <Link href={'/api/auth/signin/google'}>SIGNIN</Link>
       </div>
     )
 }
