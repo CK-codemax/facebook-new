@@ -1,13 +1,19 @@
 import Link from "next/link";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Widgets from "./components/Widgets";
+import AuthProvider from "./context/AuthProvider";
 
 
 export default function page() {
   return(
-    <div>
-    <p>welcome to my facebook clone</p>
-    <p>LET US SEE</p>
-   <Link href={'/api/auth/signin/google'}>SIGNIN</Link>
-  </div>
-    
+     
+   <AuthProvider>
+     <Header />
+        <main className="flex">
+        <Sidebar />
+        <Widgets />
+        </main>
+   </AuthProvider>
   )
 }
