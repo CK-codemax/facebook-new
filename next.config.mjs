@@ -7,6 +7,12 @@ const nextConfig = {
             hostname: 'dailypost.ng',
             port: '',
           },
+
+          {
+            protocol: 'https',
+            hostname: 'links.papareact.com',
+            port: '',
+          },
         ]
         }
 };
