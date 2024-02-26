@@ -18,7 +18,7 @@ import { redirect } from "next/navigation";
 export default function Header() {
    
   const { data : session } =  useSession()
-  if(!session)redirect('/api/auth/signin')
+  if(!session)redirect('/api/auth/signin/google')
   return (
     <header className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
         {/*left*/}
