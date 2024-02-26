@@ -12,9 +12,12 @@ import Image from "next/image";
 import HeaderIcon from "./HeaderIcon";
 import SideBarModal from "./SideBarModal";
 import WidgetsModal from "./WidgetsModal";
+import { useSession } from "next-auth/react";
 
 export default function Header() {
    
+  const {data : session} = useSession()
+ console.log(session)
   return (
     <header className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
         {/*left*/}
@@ -51,7 +54,7 @@ export default function Header() {
         <div className="flex items-center sm:space-x-2 justify-end">
            
             <p className="font-semibold hidden sm:inline-flex pr-3 whitespace-nowrap">
-              whoro ochuko
+              {session?.user?.name}
             </p>
             <CgMenuGridO className="reactIcon" />
             <FaFacebookMessenger className="reactIcon" />
