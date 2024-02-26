@@ -12,13 +12,12 @@ import Image from "next/image";
 import HeaderIcon from "./HeaderIcon";
 import SideBarModal from "./SideBarModal";
 import WidgetsModal from "./WidgetsModal";
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 
 export default function Header() {
    
   const { data : session } =  useSession()
-  if(!session)redirect('/api/auth/signin/google')
   return (
     <header className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
         {/*left*/}
@@ -55,7 +54,7 @@ export default function Header() {
         <div className="flex items-center sm:space-x-2 justify-end">
            
             <p className="font-semibold hidden sm:inline-flex pr-3 whitespace-nowrap">
-              ochuko
+              {session?.user?.name}
             </p>
             <CgMenuGridO className="reactIcon" />
             <FaFacebookMessenger className="reactIcon" />
@@ -71,7 +70,7 @@ export default function Header() {
 
              </WidgetsModal>
         
-             <Image className="rounded-full cursor-pointer object-cover w-[44px] h-[44px]" src={'/facebook-user.png'} alt="profile-image" width={40} height={40} />
+             <Image onClick={() => signOut()} className="rounded-full cursor-pointer object-cover w-[44px] h-[44px]" src={'/facebook-user.png'} alt="profile-image" width={40} height={40} />
 
 
 
