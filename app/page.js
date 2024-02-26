@@ -1,10 +1,13 @@
-import Welcome from "./components/Welcome";
-import AuthProvider from "./context/AuthProvider";
+import Link from "next/link";
+
 
 export default function page() {
   return(
-    <AuthProvider>
-      <Welcome />
-    </AuthProvider>
+    <div>
+    <p>welcome to my facebook clone</p>
+    <p>LET US SEE</p>
+   <Link href={'/api/auth/signin/google'}>SIGNIN</Link>
+  </div>
+    
   )
 }
