@@ -13,6 +13,7 @@ import HeaderIcon from "./HeaderIcon";
 import SideBarModal from "./SideBarModal";
 import WidgetsModal from "./WidgetsModal";
 import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export default function Header() {
    
