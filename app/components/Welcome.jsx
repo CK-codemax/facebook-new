@@ -23,7 +23,7 @@ export default function Welcome() {
       <div>
         <p>welcome to my facebook clone</p>
       
-       {mounted && !session && <Link href={'/api/auth/signin/google'}>SIGNIN</Link>}
+       {mounted && <Link href={'/api/auth/signin/google'}>SIGNIN</Link>}
       </div>
     )
 }
