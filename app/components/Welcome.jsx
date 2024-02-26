@@ -11,7 +11,11 @@ export default function Welcome() {
     return (
       <div>
         <p>welcome to my facebook clone</p>
-        <Link href={'/api/auth/signin/google'}>Click here to view more</Link>
+        {!session ? (
+            <Link href={'/api/auth/signin/google'}>Click here to SIGNIN</Link>
+        ) : (
+            <Link href={'/api/auth/signout'}>Click here to SIGNOUT</Link>
+        )}
       </div>
     )
 }
