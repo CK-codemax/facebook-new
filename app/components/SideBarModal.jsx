@@ -72,7 +72,7 @@ function Window(){
            <div className={`sm:hidden h-screen w-[80%] fixed z-30 top-0 left-0  ${isOpen ? 'translate-x-0' : '-translate-x-[100%]' } transition-all duration-500 linear origin-left`}>
           
          
-             <div  ref={sideBarRef} className="p-2 pt-4 w-full h-full bg-white flex flex-col space-y-3 border-2 border-black">
+             <div  ref={sideBarRef} className="p-2 pt-4 w-full h-full bg-gray-100 flex flex-col space-y-3 ">
        <SidebarRow Icon={FaUserFriends} title={'friends'}/> 
        <SidebarRow Icon={MdGroups} title={'groups'}/> 
        <SidebarRow Icon={GoClock} title={'memories'}/> 

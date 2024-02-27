@@ -11,7 +11,7 @@ import SidebarRow from "./SidebarRow";
 export default function Sidebar() {
   return (
   <div className="hidden sm:inline-flex">
-      <div className="p-2 pt-4 max-w-[600px] border-2 border-black xl:min-w-[300px]">
+      <div className="p-2 pt-4 max-w-[600px] xl:min-w-[300px]">
        <SidebarRow Icon={FaUserFriends} title={'friends'}/> 
        <SidebarRow Icon={MdGroups} title={'groups'}/> 
        <SidebarRow Icon={GoClock} title={'memories'}/> 
