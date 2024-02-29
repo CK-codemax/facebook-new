@@ -63,7 +63,7 @@ const options = {
             <Image className="rounded-full object-cover cursor-pointer w-[50px] h-[50px]" src={post.image} alt="profile-image" layout="fixed" width={40} height={40} />
            <div className="flex flex-col justify-start items-start">
            <div className="flex items-center space-x-1">
-                <p className="font-semibold cursor-pointer truncate text-nowrap hover:underline text-gray-900">{post.name}</p>
+                <p className="font-semibold max-w-[130px] cursor-pointer truncate sm:max-w-[300px] text-nowrap hover:underline text-gray-900">{post.name}</p>
                 <BsPatchCheckFill className="text-[16px] text-blue-600" />
                 <div className="bg-gray-700 w-1 h-1 rounded-full" />
                 <p className="text-blue-600 cursor-pointer hover:underline font-semibold">Follow</p>
@@ -79,7 +79,7 @@ const options = {
 
             </div>
 
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center -translate-y-4 space-x-2">
 
                <div className="py-2 hidden sm:inline-flex px-2 rounded-full cursor-pointer hover:bg-gray-200">
                <FaEllipsis className="text-[24px]" />
@@ -124,19 +124,19 @@ const options = {
             <div onClick={handleSetLikes} className="flex w-full group items-center justify-center py-2 rounded-md cursor-pointer space-x-1 hover:bg-gray-200">
                 {/* <HandThumbLight  className={`h-6 group-hover:animate-bounce ${!liked ? 'text-gray-600' : 'text-blue-600'}`}/>
                  */}
-                {!post?.liked ? (<BsHandThumbsUp className="text-[24px] group-hover:animate-bounce text-gray-600" />) : (<BsHandThumbsUpFill className="text-[24px] group-hover:animate-bounce text-blue-600" />)}
+                {!post?.liked ? (<BsHandThumbsUp className="text-[24px] text-gray-600" />) : (<BsHandThumbsUpFill className="text-[24px] text-blue-600" />)}
                 <p className="font-semibold text-gray-600">Like</p>
 
             </div>
 
             <div className="flex w-full group items-center justify-center py-2 rounded-md cursor-pointer space-x-1 hover:bg-gray-200">
-                <IoChatbubbleOutline className="text-[24px] group-hover:animate-bounce text-gray-600" />
+                <IoChatbubbleOutline className="text-[24px]  text-gray-600" />
                 <p className="font-semibold text-gray-600">Comment</p>
 
             </div>
 
             <div className="flex w-full group items-center justify-center py-2 rounded-md cursor-pointer space-x-1 hover:bg-gray-200">
-                <PiShareFatLight className="text-[24px] group-hover:animate-bounce text-gray-600" />
+                <PiShareFatLight className="text-[24px] text-gray-600" />
                 <p className="font-semibold text-gray-600">Share</p>
 
             </div>

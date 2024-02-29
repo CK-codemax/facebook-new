@@ -123,7 +123,7 @@ function Window({removeImage, sendPostWithImage, filePickerRef, emojiMessage, me
         </div>
 
         {
-          emojiIsOpen &&  <div className="fixed z-50 left-[50%] -translate-x-[50%] -translate-y-[40%]" ref={emojiRef}><EmojiPicker onEmojiClick={(e) => emojiMessage(e.emoji)} /></div>
+          emojiIsOpen &&  <div className="fixed hidden lg:block z-50 left-[50%] -translate-x-[50%] -translate-y-[40%]" ref={emojiRef}><EmojiPicker onEmojiClick={(e) => emojiMessage(e.emoji)} /></div>
         }
 
         <div onClick={() => filePickerRef.current.click()} className="border relative block bg-transparent cursor-pointer mt-3 p-2 w-[95%] mx-auto rounded-md">
@@ -139,13 +139,13 @@ function Window({removeImage, sendPostWithImage, filePickerRef, emojiMessage, me
         </div>
 
         <div className="flex items-center mt-3 px-4 py-2 justify-between shadow-md border w-[95%] mx-auto rounded-md">
-          <p className="font-semibold">Add Your Post</p>
+         {!imageToPost?.length > 0 ? <p className="font-semibold text-nowrap">Add Your Post</p> : null}
         
           <div className="flex items-center flex-grow">
-            {imageToPost?.map((image) => (<div key={image} onClick={removeImage} className="flex filter flex-col hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer">
-              <img src={image} alt="uploaded-image" className="object-contain h-10" />
-              <p className="text-xs text-red-300 text-center">Remove</p>
+            {imageToPost?.map((image) => (<div key={image} className="flex filter flex-col hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer">
+              <img src={image} alt="uploaded-image" className="object-contain w-auto h-10" />
             </div>))}
+              {imageToPost?.length > 0 ? <p onClick={removeImage} className="text-xs cursor-pointer text-red-300 text-center">Remove</p> : null}
            </div>
 
        <div className="flex items-center space-x-0">

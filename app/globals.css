@@ -12,6 +12,6 @@
   }
 
   .inputIcon{
-    @apply flex items-center space-x-0 hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl cursor-pointer
+    @apply flex items-center space-x-1 hover:bg-gray-100 flex-grow justify-center p-2 rounded-xl cursor-pointer
   }
 }

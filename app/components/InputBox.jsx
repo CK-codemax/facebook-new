@@ -183,7 +183,7 @@ export default function InputBox() {
           <Modal.Open>
           <div className="inputIcon">
             <CiVideoOn className="text-red-500 text-[20px] sm:text-[28px]" />
-            <p className="text-xs text-nowrap sm:text-sm xl:text-base">Live Video</p>
+            <p className="text-xs text-nowrap sm:text-sm xl:text-base">Live<span className="hidden sm:inline">{' '}Video</span></p>
            </div>
            </Modal.Open>
 
@@ -199,7 +199,7 @@ export default function InputBox() {
           <Modal.Open>
           <div className="inputIcon">
             <GrGallery className="text-green-400 text-[20px] sm:text-[28px]" />
-            <p className="text-xs sm:text-sm xl:text-base">Photo/Video</p>
+            <p className="text-xs sm:text-sm xl:text-base">Photo<span className="hidden sm:inline">/Video</span></p>
           
            </div>
            </Modal.Open>
@@ -213,7 +213,7 @@ export default function InputBox() {
           <Modal.Open>
           <div className="inputIcon">
             <FaRegFaceSmile className="text-yellow-300 text-[20px] sm:text-[28px]" />
-            <p className="text-xs sm:text-sm xl:text-base">Feeling/Activity</p>
+            <p className="text-xs sm:text-sm xl:text-base">Feeling<span className="hidden sm:inline">/Activity</span></p>
            </div>
            </Modal.Open>
 
