@@ -8,12 +8,7 @@ const nextConfig = {
             port: '',
           },
 
-          {
-            protocol: 'https',
-            hostname: 'links.papareact.com',
-            port: '',
-          },
-
+      
           {
             protocol: 'https',
             hostname: 'lh3.googleusercontent.com',

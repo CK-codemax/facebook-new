@@ -22,7 +22,7 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
         {/*left*/}
         <div className="flex items-center">
-            <Image className='w-[40px] h-[40px] rounded-full' src='https://links.papareact.com/5me' width={40} height={40} alt="facebook-logo" />
+            <Image className='w-[40px] h-[40px] bg-white rounded-full' src='/facebook-logo.png' width={40} height={40} alt="facebook-logo" />
             
             <div className="ml-2 hidden md:flex rounded-full border py-1 px-2 bg-gray-100 border-gray-500  items-center">
                 <CiSearch className="text-[24px] text-gray-600"/>
