@@ -38,7 +38,7 @@ export default function ShowPosts() {
       }, []);
    
 
-  return <div>
+  return <div className="flex flex-col space-y-5 pt-5">
     {posts?.map((post) => <CreatePost key={post.timestamp} post={post} />)}
   </div>
 }

@@ -8,12 +8,12 @@ export default function page() {
   return(
      
    <>
-     <Header />
+     {/* <Header />
         <main className="bg-gray-100 flex">
-        <Sidebar />
+        <Sidebar /> */}
         <Feed />
-        <Widgets />
-        </main>
+        {/* <Widgets />
+        </main> */}
    </>
   )
 }

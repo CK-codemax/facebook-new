@@ -13,7 +13,7 @@ import HeaderIcon from "./HeaderIcon";
 import SideBarModal from "./SideBarModal";
 import WidgetsModal from "./WidgetsModal";
 import { signOut, useSession } from "next-auth/react";
-import { redirect } from "next/navigation";
+import Link from "next/link";
 
 export default function Header() {
    
@@ -22,8 +22,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 bg-white flex items-center p-2 lg:px-5 shadow-md">
         {/*left*/}
         <div className="flex items-center">
-            <Image className='w-[40px] h-[40px] bg-white rounded-full' src='/facebook-logo.png' width={40} height={40} alt="facebook-logo" />
-            
+           
+           <Link href={'/'}> <Image className='w-[40px] h-[40px] rounded-full' src='/facebook-logo.png' width={40} height={40} alt="facebook-logo" /></Link>
+           
             <div className="ml-2 hidden md:flex rounded-full border py-1 px-2 bg-gray-100 border-gray-500  items-center">
                 <CiSearch className="text-[24px] text-gray-600"/>
                 <input className="outline-none hidden lg:inline-flex ml-2 flex-shrink placeholder:text-gray-500 bg-transparent border-none" type='text' placeholder="Search Facebook" />
@@ -41,7 +42,7 @@ export default function Header() {
         {/*center*/}
          <div className="flex justify-center flex-grow">
             <div className="p-2 flex mx-auto space-x-2 xl:space-x-6">
-                <HeaderIcon active Icon={GoHomeFill} />
+               <Link href={'/'}> <HeaderIcon active Icon={GoHomeFill} /></Link>
                 <HeaderIcon Icon={LuUsers} />
                 <HeaderIcon Icon={PiVideo} />
                 <HeaderIcon Icon={CiShop} />

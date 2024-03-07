@@ -66,7 +66,8 @@ export default function InputBox() {
           image : session?.user.image,
           timestamp : serverTimestamp(),
           postImages : imagesToGo,
-          likes : 0,
+          likes : [],
+          comments : [],
         
         })
   
@@ -88,7 +89,8 @@ export default function InputBox() {
           image : session?.user.image,
           timestamp : serverTimestamp(),
           postImages : [],
-          likes : 0,
+          likes : [],
+          comments : [],
          
         })
   
@@ -110,7 +112,8 @@ export default function InputBox() {
             image : session?.user.image,
             timestamp : serverTimestamp(),
             postImages : imagesToGo,
-            likes : 0,
+            likes : [],
+            comments : [],
           })
     
           console.log("Document written with ID: ", docRef.id);

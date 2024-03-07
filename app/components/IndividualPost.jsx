@@ -10,11 +10,12 @@ import { HiMiniXMark } from "react-icons/hi2";
 import { FaEllipsis } from "react-icons/fa6";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { PiShareFatLight } from "react-icons/pi";
-import Link from "next/link";
 import CommentBox from "./CommentBox";
 
-export default function CreatePost({post}) {
-   
+export default function IndividualPost({post, comments}) {
+
+    //const post = posts.find((el) => el.id === id)
+    
     const {data : session} = useSession()
 
     
@@ -51,10 +52,9 @@ const options = {
   hour12: true,
   };
 
-  return (
-    <div className="flex flex-col px-2 pl-4 pb-2 rounded-lg bg-white">
-   <Link href={`individual-post/${post.id}`} className="mt-3">
-        
+  return (<div className="flex flex-col space-y-5">
+   <div className="mt-8 flex-grow pt-2">
+        <div className="flex flex-col px-2 py-2 pl-4 rounded-lg bg-white">
             {/*Header, profile info*/}
         <div className="flex justify-between items-center mb-3">
             <div className="flex space-x-2">
@@ -82,11 +82,11 @@ const options = {
                <div className="py-2 hidden sm:inline-flex px-2 rounded-full cursor-pointer hover:bg-gray-200">
                <FaEllipsis className="text-[24px]" />
                </div>
-              {/* {session?.user?.email === post?.email && (
+              {session?.user?.email === post?.email && (
                  <div className="py-2 px-2 rounded-full cursor-pointer hover:bg-gray-200">
                  <HiMiniXMark onClick={handleDeletePost} className="text-[24px]" />
                 </div>
-              )} */}
+              )}
             </div>
         </div>
 
@@ -116,7 +116,6 @@ const options = {
           ) : null}
 
         </div>
-        </Link>
 
 
         <div className="flex w-full items-center pt-2 justify-between">
@@ -128,7 +127,7 @@ const options = {
 
             </div>
 
-           <CommentBox post={post} />
+            <CommentBox post={post} />   
 
             <div className="flex w-full group items-center justify-center py-2 rounded-md cursor-pointer space-x-1 hover:bg-gray-200">
                 <PiShareFatLight className="text-[24px] text-gray-600" />
@@ -138,6 +137,12 @@ const options = {
 
 
         </div>
+
+    </div>
+   </div>
+
+   {comments?.map((comment, i) => <p key={comment.email + i}>{comment.message}</p>)}
+
    </div>
   )
 }

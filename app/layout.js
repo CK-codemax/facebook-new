@@ -2,9 +2,11 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { getServerSession } from "next-auth";
 import { options } from "./api/auth/[...nextauth]/options";
-import Link from "next/link";
 import AuthProvider from "./context/AuthProvider";
 import SignIn from "./components/SignIn";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Widgets from "./components/Widgets";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,7 +23,13 @@ export default async function RootLayout({ children }) {
        
       {session ? (
         <AuthProvider session={session}>
+          <Header />
+        <main className="bg-gray-100 flex">
+        <Sidebar />
+       
           {children}
+        <Widgets />
+        </main>
         </AuthProvider>
       ) : (<SignIn/>)
       }
