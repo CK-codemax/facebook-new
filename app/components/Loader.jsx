@@ -1,6 +1,8 @@
 export default function Loader() {
     return (
-         <div className="spinner" />
+        <div className="w-full h-screen flex items-center justify-center">
+           <div className="spinner" />
+        </div>
     )
   }
   

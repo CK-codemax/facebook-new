@@ -52,7 +52,7 @@ const options = {
   hour12: true,
   };
 
-  return (<div className="flex flex-col space-y-5">
+  return (<div className="flex flex-col px-3 sm:px-0 flex-grow min-h-screen pb-44 pt-6 xl:mx-8 overflow-y-auto scrollbar-hide space-y-5">
    <div className="mt-8 flex-grow pt-2">
         <div className="flex flex-col px-2 py-2 pl-4 rounded-lg bg-white">
             {/*Header, profile info*/}
