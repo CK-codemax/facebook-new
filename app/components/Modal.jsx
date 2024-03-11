@@ -145,7 +145,7 @@ function Window({removeImage, sendPostWithImage, filePickerRef, emojiMessage, me
             {imageToPost?.map((image) => (<div key={image} className="flex filter flex-col hover:brightness-110 transition duration-150 transform hover:scale-105 cursor-pointer">
               <img src={image} alt="uploaded-image" className="object-contain w-auto h-10" />
             </div>))}
-              {imageToPost?.length > 0 ? <p onClick={removeImage} className="text-xs cursor-pointer text-red-300 text-center">Remove</p> : null}
+              {imageToPost?.length > 0 ? <p onClick={removeImage} className="text-xs cursor-pointer ml-4 text-red-300 text-center">Remove</p> : null}
            </div>
 
        <div className="flex items-center space-x-0">

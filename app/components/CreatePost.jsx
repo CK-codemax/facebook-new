@@ -82,11 +82,7 @@ const options = {
                <div className="py-2 hidden sm:inline-flex px-2 rounded-full cursor-pointer hover:bg-gray-200">
                <FaEllipsis className="text-[24px]" />
                </div>
-              {/* {session?.user?.email === post?.email && (
-                 <div className="py-2 px-2 rounded-full cursor-pointer hover:bg-gray-200">
-                 <HiMiniXMark onClick={handleDeletePost} className="text-[24px]" />
-                </div>
-              )} */}
+              
             </div>
         </div>
 
@@ -94,7 +90,7 @@ const options = {
         <div className="flex flex-col pb-2 mb-2 items-start justify-start ">
 
            {post?.message && (
-             <p className="mb-1">
+             <p className="mb-1 line-clamp-5">
              {post.message}
              </p>
            )}
@@ -111,7 +107,8 @@ const options = {
         <div className="flex w-full items-center justify-between border-b border-gray-400">
           {post?.likes.length > 0 ? (
               <div className="flex w-full items-center  justify-start space-x-1">
-              <p className="cursor-pointer text-black hover:underline">Liked by {post?.likes.map(el => el.name).slice(-1).join()} {post?.likes.length > 1 && `and ${post?.likes.length - 1} ${post?.likes.length > 2 ? 'others' : 'other'}`}</p>
+              <p className="cursor-pointer text-black hover:underline">Liked by {post.likes.find(el => el.email === session?.user.email) && `You${post?.likes?.filter((el => el.email !== session?.user.email)).length > 0 ? post?.likes.filter((el => el.email !== session?.user.email))?.length > 1 ? ', ' : ' and' : ''} `} {post?.likes.filter((el => el.email !== session?.user.email)).length > 1 ? `${post?.likes?.filter((el => el.email !== session?.user.email))?.map((el) => el.name).slice(-1).join()} and` : post?.likes?.filter((el => el.email !== session?.user.email))?.map((el) => el.name).slice(-1)?.join() } {post?.likes.filter((el => el.email !== session?.user.email)).length > 1 && `${post?.likes.filter((el => el.email !== session?.user.email)).length - 1} ${post?.likes.filter((el => el.email !== session?.user.email)).length > 2 ? 'others' : 'other'}`}</p>
+         
           </div>
           ) : null}
 

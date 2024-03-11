@@ -11,12 +11,15 @@ import { FaEllipsis } from "react-icons/fa6";
 import { BsPatchCheckFill } from "react-icons/bs";
 import { PiShareFatLight } from "react-icons/pi";
 import CommentBox from "./CommentBox";
+import { useRouter } from "next/navigation";
+import ShowComment from "./ShowComment";
 
 export default function IndividualPost({post, comments}) {
 
     //const post = posts.find((el) => el.id === id)
     
     const {data : session} = useSession()
+    const router = useRouter();
 
     
 
@@ -36,6 +39,7 @@ export default function IndividualPost({post, comments}) {
         const docRef = doc(db, 'posts', post.id);
 
     deleteDoc(docRef)
+    router.push('/')
     }
 
     const firestoreTimestamp = Timestamp.fromMillis(post?.timestamp); // Example timestamp
@@ -52,8 +56,8 @@ const options = {
   hour12: true,
   };
 
-  return (<div className="flex flex-col px-3 sm:px-0 flex-grow min-h-screen pb-44 pt-6 xl:mx-8 overflow-y-auto scrollbar-hide space-y-5">
-   <div className="mt-8 flex-grow pt-2">
+  return (<div className="flex flex-col px-3 min-h-screen sm:pr-6 lg:px-0 lg:pr-0 flex-grow pb-44 pt-6 xl:mx-8 overflow-y-auto scrollbar-hide space-y-5">
+   <div className="mt-8 pt-2">
         <div className="flex flex-col px-2 py-2 pl-4 rounded-lg bg-white">
             {/*Header, profile info*/}
         <div className="flex justify-between items-center mb-3">
@@ -111,7 +115,8 @@ const options = {
         <div className="flex w-full items-center justify-between border-b border-gray-400">
           {post?.likes.length > 0 ? (
               <div className="flex w-full items-center  justify-start space-x-1">
-              <p className="cursor-pointer text-black hover:underline">Liked by {post?.likes.map(el => el.name).slice(-1).join()} {post?.likes.length > 1 && `and ${post?.likes.length - 1} ${post?.likes.length > 2 ? 'others' : 'other'}`}</p>
+               <p className="cursor-pointer text-black hover:underline">Liked by {post.likes.find(el => el.email === session?.user.email) && `You${post?.likes?.filter((el => el.email !== session?.user.email)).length > 0 ? post?.likes.filter((el => el.email !== session?.user.email))?.length > 1 ? ', ' : ' and' : ''} `} {post?.likes.filter((el => el.email !== session?.user.email)).length > 1 ? `${post?.likes?.filter((el => el.email !== session?.user.email))?.map((el) => el.name).slice(-1).join()} and` : post?.likes?.filter((el => el.email !== session?.user.email))?.map((el) => el.name).slice(-1)?.join() } {post?.likes.filter((el => el.email !== session?.user.email)).length > 1 && `${post?.likes.filter((el => el.email !== session?.user.email)).length - 1} ${post?.likes.filter((el => el.email !== session?.user.email)).length > 2 ? 'others' : 'other'}`}</p>
+         
           </div>
           ) : null}
 
@@ -141,7 +146,7 @@ const options = {
     </div>
    </div>
 
-   {comments?.map((comment, i) => <p key={comment.email + i}>{comment.message}</p>)}
+   {comments?.map((comment, i) => <ShowComment key={comment.message + i} post={comment} id={post.id} />)}
 
    </div>
   )
