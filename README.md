@@ -1,3 +1,5 @@
+This application is a facebook clone with basic functionalities such as updating posts, commenting on posts, likes and delete of posts. I built this project to practice more of the web.
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

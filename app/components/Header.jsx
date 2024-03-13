@@ -72,7 +72,9 @@ export default function Header() {
 
              </WidgetsModal>
         
-             <Image onClick={() => signOut()} className="rounded-full cursor-pointer object-cover w-[44px] h-[44px]" src={session?.user?.image} alt="profile-image" width={40} height={40} placeholder="blur" blurDataURL="/facebook-user.png"/>
+           
+             <Image onClick={() => signOut({callbackUrl : '/'})} className="rounded-full cursor-pointer object-cover w-[44px] h-[44px]" src={session?.user?.image} alt="profile-image" width={40} height={40} placeholder="blur" blurDataURL="/facebook-user.png"/>
+    
 
 
 

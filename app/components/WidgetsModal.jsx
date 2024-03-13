@@ -60,9 +60,9 @@ function Window(){
          return createPortal(<>
            {isOpen && (<div className="w-full lg:hidden bg-[rgba(255, 255, 255, 0.1)] z-30 h-screen fixed top-0 left-0"/>
                 )}  
-           <div className={`w-[80%] sm:w-[40%] lg:hidden h-screen z-30 fixed top-0 right-0 ${isOpen ? 'translate-x-0' : 'translate-x-[100%]' }  transition-all duration-500 linear origin-right`}>
+           <div className={`w-[80%] sm:w-[40%] lg:hidden min-h-screen z-30 fixed top-0 right-0 ${isOpen ? 'translate-x-0' : 'translate-x-[100%]' }  transition-all duration-500 linear origin-right`}>
              
-             <div ref={widgetsRef} className='flex h-screen scrollbar-hide overflow-y-auto flex-col w-full bg-gray-100 mt-12 p-2 pt-4 sm:pt-10'>
+             <div ref={widgetsRef} className='flex h-screen scrollbar-hide overflow-y-auto flex-col w-full bg-gray-100 mt-12 p-2 pt-4 pb-16 sm:pt-10'>
 
 
 {contacts.map((contact) => <Contact key={contact.src} src={contact.src} name={contact.name} />)}
